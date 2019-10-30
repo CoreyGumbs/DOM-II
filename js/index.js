@@ -69,4 +69,26 @@ window.addEventListener('scroll', e => {
     console.log(window.scrollY);
 });
 
+const imgContent =  document.querySelectorAll('.img-content img');
 
+imgContent.forEach(img => {
+    img.addEventListener('mouseleave', ()=>{
+        img.src='../img/change-bus.jpg';
+    })
+});
+
+
+///stop nav
+const stopNavLinks = document.querySelectorAll('.nav-link')
+
+stopNavLinks.forEach(link =>{
+    link.addEventListener('click', e =>{
+        link.style.color="#cccccc";
+        console.log(event);
+        e.preventDefault();
+    });
+
+    link.addEventListener('mouseover', () => {
+        link.style.cursor='not-allowed';
+    });
+})
