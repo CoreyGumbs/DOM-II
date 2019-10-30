@@ -13,3 +13,12 @@ logoChange.addEventListener('mouseout', () => {
     logoChange.style.transform='all 1s ease-in';
     logoChange.style.color='blue';
 });
+
+const changeImgs = document.querySelectorAll('img');
+console.log(changeImgs)
+
+window.addEventListener('resize', () =>{
+    changeImgs.forEach(img => {
+        img.src="../img/beach.jpg";
+    });
+});
