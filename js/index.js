@@ -20,34 +20,53 @@ logoChange.addEventListener('mouseout', () => {
 
 const changeImgs = document.querySelectorAll('img');
 
-
 window.addEventListener('resize', () =>{
     changeImgs.forEach(img => {
         img.src="../img/beach.jpg";
     });
 });
 
+const changeBusImg = document.querySelector('.intro img')
+
+changeBusImg.addEventListener('click', () => {
+    changeBusImg.src='../img/change-bus.jpg';
+});
+
+changeBusImg.addEventListener('dblclick', () => {
+    changeBusImg.src='../img/fun-bus.jpg';
+});
 
 const changeText = document.querySelectorAll('.text-content');
 
 changeText.forEach(element => {
-    element.addEventListener('mouseenter', () =>{
-        element.style.cssText = ' padding: 10% 0; font-size: 4rem; background-color: red; text-align: center; color: white';
-       
+    element.addEventListener('mouseover', () =>{
+        element.style.cssText = ' padding: 10% 0; font-size: 4rem; background-color: red; text-align: center; color: white';   
         element.textContent = "HA! HA!";
        
     });
 });
 
+changeText.forEach(element =>{
+    element.addEventListener('click', () =>{
+        element.style.cssText = 'background-image: linear-gradient(rgba(23,45,67,1), rgba(123, 56, 78,1)); padding: 10% 0; font-size: 4rem;  text-align: center; color: white';
+        element.innerHTML = "You Clicked Me!";
+    });
+})
 
-const changeColor =  document.querySelector('.destination');
-changeColor.style.opacity='0';
+const changeColor =  document.querySelectorAll('.destination');
+changeColor.forEach(item => {
+    item.style.opacity='0';
+})
 
 window.addEventListener('scroll', e => {
 
-    if(window.scrollY >= 1130){
-        changeColor.style.opacity = '1';
-        changeColor.style.transition = 'opacity 2s ease-in';
+    if(window.scrollY <= 1500){
+        changeColor.forEach(destination => {
+            destination.style.opacity = '1';
+            destination.style.transition = 'opacity 2s ease-in';
+        })
     }
     console.log(window.scrollY);
-})
+});
+
+
