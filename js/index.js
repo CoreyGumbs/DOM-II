@@ -42,23 +42,20 @@ changeText.forEach(element => {
     element.addEventListener('mouseover', () =>{
         element.style.cssText = ' padding: 10% 0; font-size: 4rem; background-color: red; text-align: center; color: white';   
         element.textContent = "HA! HA!";
-       
     });
-});
 
-changeText.forEach(element =>{
     element.addEventListener('click', () =>{
         element.style.cssText = 'background-image: linear-gradient(rgba(23,45,67,1), rgba(123, 56, 78,1)); padding: 10% 0; font-size: 4rem;  text-align: center; color: white';
         element.innerHTML = "You Clicked Me!";
     });
-})
+});
 
 const changeColor =  document.querySelectorAll('.destination');
 changeColor.forEach(item => {
     item.style.opacity='0';
 })
 
-window.addEventListener('scroll', e => {
+window.addEventListener('scroll', () => {
 
     if(window.scrollY <= 1500){
         changeColor.forEach(destination => {
@@ -84,7 +81,6 @@ const stopNavLinks = document.querySelectorAll('.nav-link')
 stopNavLinks.forEach(link =>{
     link.addEventListener('click', e =>{
         link.style.color="#cccccc";
-        console.log(event);
         e.preventDefault();
     });
 
