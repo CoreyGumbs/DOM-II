@@ -1,6 +1,6 @@
 // Your code goes here
 const logoChange= document.querySelector('.logo-heading');
-console.log(logoChange);
+
 
 logoChange.addEventListener('mouseover', () => {
     logoChange.style.transform='scale(1.5)';
@@ -15,10 +15,23 @@ logoChange.addEventListener('mouseout', () => {
 });
 
 const changeImgs = document.querySelectorAll('img');
-console.log(changeImgs)
+
 
 window.addEventListener('resize', () =>{
     changeImgs.forEach(img => {
         img.src="../img/beach.jpg";
     });
 });
+
+
+const changeText = document.querySelectorAll('.text-content');
+console.log(changeText);
+
+changeText.forEach(element => {
+    element.addEventListener('mouseenter', () =>{
+        element.style.cssText = ' padding: 10% 0; font-size: 4rem; background-color: red; text-align: center; color: white';
+       
+        element.textContent = "HA! HA!";
+       
+    });
+})
