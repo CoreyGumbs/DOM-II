@@ -1,6 +1,10 @@
-// Your code goes here
-const logoChange= document.querySelector('.logo-heading');
 
+// Your code goes here
+window.addEventListener('load', event => {
+    console.log('Page Loaded Correctly!');
+})
+
+const logoChange= document.querySelector('.logo-heading');
 
 logoChange.addEventListener('mouseover', () => {
     logoChange.style.transform='scale(1.5)';
@@ -25,7 +29,6 @@ window.addEventListener('resize', () =>{
 
 
 const changeText = document.querySelectorAll('.text-content');
-console.log(changeText);
 
 changeText.forEach(element => {
     element.addEventListener('mouseenter', () =>{
@@ -34,4 +37,17 @@ changeText.forEach(element => {
         element.textContent = "HA! HA!";
        
     });
+});
+
+
+const changeColor =  document.querySelector('.destination');
+changeColor.style.opacity='0';
+
+window.addEventListener('scroll', e => {
+
+    if(window.scrollY >= 1130){
+        changeColor.style.opacity = '1';
+        changeColor.style.transition = 'opacity 2s ease-in';
+    }
+    console.log(window.scrollY);
 })
