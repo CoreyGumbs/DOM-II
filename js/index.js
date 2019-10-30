@@ -74,6 +74,20 @@ imgContent.forEach(img => {
     })
 });
 
+const destinationBGChange = document.querySelector('.content-destination');
+
+destinationBGChange.addEventListener('click', ()=>{
+    destinationBGChange.style.backgroundColor = 'red';
+});
+
+const destinationHeader = document.querySelector('.content-destination h2');
+
+destinationHeader.addEventListener('click', (e) =>{
+    destinationHeader.style.backgroundColor = 'blue';
+    e.stopPropagation();
+})
+
+
 
 ///stop nav
 const stopNavLinks = document.querySelectorAll('.nav-link')
